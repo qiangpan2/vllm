@@ -35,7 +35,7 @@ export VLLM_HOST_IP=192.168.23.8 # cse-ai-8
 VLLM_WORKER_MULTIPROC_METHOD=spawn \
 VLLM_MLA_DISABLE=1 \
 VLLM_USE_TRITON_FLASH_ATTN=1 \
-vllm serve /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
+LD_LIBRARY_PATH=/root/rccl_deps/lib:$LD_LIBRARY_PATH vllm serve /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
     --block-size 16 \
     --max-num-seqs  1 \
     --max-num-batched-tokens 16384 \
