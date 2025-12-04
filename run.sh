@@ -38,9 +38,14 @@ export NCCL_IB_RETRY_CNT=7       # 增加重试次数
 
 #Ray settings
 apt install iproute2
-# ray start --head --node-ip-address=192.168.23.8 --port=6379 --num-gpus=8
-# ray start --address='192.168.23.8:6379' --num-gpus=8
+ray start --head \
+  --node-ip-address=192.168.23.8 \
+  --port=6379 \
+  --num-gpus=1  > ray.log 2>&1 
+
+ray start --address='192.168.23.8:6379' --num-gpus=8
 ray status
+ray list nodes --detail  
 
 export VLLM_HOST_IP=192.168.23.8 # cse-ai-8
 
@@ -67,9 +72,9 @@ vllm serve /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
     --distributed-executor-backend ray \
     --seed 0 \
     --generation-config auto \
-    --override_generation_config '{"temperature": 0}'
+    --override_generation_config '{"temperature": 0}' > serve_log.txt 2>&1 
 
-CONCURRENT=2
+CONCURRENT=3
 #benchmark test
 python /vllm_v0.9.1/benchmarks/benchmark_serving.py \
     --backend vllm \
@@ -80,5 +85,5 @@ python /vllm_v0.9.1/benchmarks/benchmark_serving.py \
     --max-concurrency ${CONCURRENT} \
     --random-input-len 129 \
     --random-output-len 1024 \
-    --ignore-eos \
+    --ignore-eos > trace.log 2>&1 
     --profile
