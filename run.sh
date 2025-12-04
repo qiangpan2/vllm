@@ -22,6 +22,8 @@ export NCCL_DEBUG=INFO
 export NCCL_IB_HCA=bnxt_re
 export GLOO_SOCKET_IFNAME=enp196s0np0 # network interface
 export NCCL_SOCKET_IFNAME=enp196s0np0
+export NCCL_MIN_NCHANNELS=3
+export NCCL_MAX_NCHANNELS=3
 
 #Ray settings
 apt install iproute2
@@ -31,11 +33,18 @@ ray status
 
 export VLLM_HOST_IP=192.168.23.8 # cse-ai-8
 
+export LD_LIBRARY_PATH=/root/rccl_deps/lib:$LD_LIBRARY_PATH
 #vLLM serve launch
+VLLM_TORCH_PROFILER_DIR=/vllm_v0.9.1/ \
+NCCL_DEBUG=INFO \
+VLLM_PROFILER_MAX_ITERS=2 \
+VLLM_TORCH_PROFILER_WITH_STACK=0 \
+VLLM_TORCH_PROFILER_RECORD_SHAPES=0 \
+VLLM_TORCH_PROFILER_WITH_PROFILE_MEMORY=0 \
 VLLM_WORKER_MULTIPROC_METHOD=spawn \
 VLLM_MLA_DISABLE=1 \
 VLLM_USE_TRITON_FLASH_ATTN=1 \
-LD_LIBRARY_PATH=/root/rccl_deps/lib:$LD_LIBRARY_PATH vllm serve /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
+vllm serve /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
     --block-size 16 \
     --max-num-seqs  1 \
     --max-num-batched-tokens 16384 \
@@ -49,14 +58,16 @@ LD_LIBRARY_PATH=/root/rccl_deps/lib:$LD_LIBRARY_PATH vllm serve /home/public/mod
     --generation-config auto \
     --override_generation_config '{"temperature": 0}'
 
+CONCURRENT=2
 #benchmark test
 python /vllm_v0.9.1/benchmarks/benchmark_serving.py \
     --backend vllm \
     --model /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/ \
     --dataset-name random \
-    --num-prompts 1 \
+    --num-prompts ${CONCURRENT} \
     --seed 0 \
-    --max-concurrency 1 \
-    --random-input-len 16 \
-    --random-output-len 16 \
-    --ignore-eos
+    --max-concurrency ${CONCURRENT} \
+    --random-input-len 129 \
+    --random-output-len 1024 \
+    --ignore-eos \
+    --profile
