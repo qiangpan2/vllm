@@ -18,12 +18,23 @@ docker run \
 
 #network settings
 export NCCL_IB_DISABLE=0
+export NCCL_IB_GID_INDEX=3    #RoCEv2
 export NCCL_DEBUG=INFO
-export NCCL_IB_HCA=bnxt_re
+
 export GLOO_SOCKET_IFNAME=enp196s0np0 # network interface
 export NCCL_SOCKET_IFNAME=enp196s0np0
-export NCCL_MIN_NCHANNELS=3
-export NCCL_MAX_NCHANNELS=3
+
+export NCCL_IB_HCA=mlx5_0  # notice
+export NCCL_NET_GDR_LEVEL=5     # high perf mode
+export NCCL_NET_GDR_READ=1      # GPU direct RDMA read
+
+# 通道和缓冲区
+export NCCL_MIN_NCHANNELS=4
+export NCCL_MAX_NCHANNELS=4
+
+# 网络可靠性
+export NCCL_IB_TIMEOUT=22        # 避免短时拥塞误判
+export NCCL_IB_RETRY_CNT=7       # 增加重试次数
 
 #Ray settings
 apt install iproute2
