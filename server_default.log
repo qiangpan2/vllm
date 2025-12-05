@@ -1,0 +1,1227 @@
+INFO 12-05 07:45:43 [__init__.py:244] Automatically detected platform rocm.
+INFO 12-05 07:46:06 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+INFO 12-05 07:46:06 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+INFO 12-05 07:46:07 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+INFO 12-05 07:46:08 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+INFO 12-05 07:46:08 [api_server.py:1287] vLLM API server version 0.1.dev10+g3d0530b.d20250904
+INFO 12-05 07:46:08 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+INFO 12-05 07:46:08 [cli_args.py:309] non-default args: {'model': '/home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/', 'trust_remote_code': True, 'seed': 0, 'max_model_len': 8192, 'override_generation_config': {'temperature': 0}, 'distributed_executor_backend': 'ray', 'pipeline_parallel_size': 4, 'tensor_parallel_size': 8, 'block_size': 16, 'gpu_memory_utilization': 0.95, 'max_num_batched_tokens': 16384, 'max_num_seqs': 1}
+INFO 12-05 07:46:08 [config.py:224] Replacing legacy 'type' key with 'rope_type'
+INFO 12-05 07:46:35 [config.py:823] This model supports multiple tasks: {'embed', 'generate', 'classify', 'reward', 'score'}. Defaulting to 'generate'.
+WARNING 12-05 07:46:35 [config.py:931] blockwise_int8 quantization is not fully optimized yet. The speed can be slower than non-quantized models.
+INFO 12-05 07:46:35 [arg_utils.py:1654] rocm is experimental on VLLM_USE_V1=1. Falling back to V0 Engine.
+INFO 12-05 07:46:35 [config.py:1983] Disabled the custom all-reduce kernel because it is not supported on current platform.
+WARNING 12-05 07:46:35 [config.py:2235] max_num_batched_tokens (16384) exceeds max_num_seqs* max_model_len (8192). This may lead to unexpected behavior.
+WARNING 12-05 07:46:35 [blockwise_int8.py:44] Detected int8 checkpoint. Please note that the format is experimental and subject to change.
+INFO 12-05 07:46:35 [llm_engine.py:230] Initializing a V0 LLM engine (v0.1.dev10+g3d0530b.d20250904) with config: model='/home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/', speculative_config=None, tokenizer='/home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config={}, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=8, pipeline_parallel_size=4, disable_custom_all_reduce=True, quantization=blockwise_int8, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=False, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":[],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"use_cudagraph":true,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"max_capture_size":1,"local_cache_dir":null}, use_cached_outputs=False, 
+2025-12-05 07:46:36,073	INFO worker.py:1601 -- Connecting to existing Ray cluster at address: 192.168.23.8:6379...
+2025-12-05 07:46:36,084	INFO worker.py:1777 -- Connected to Ray cluster. View the dashboard at [1m[32m127.0.0.1:8265 [39m[22m
+INFO 12-05 07:46:38 [ray_utils.py:334] No current placement group found. Creating a new placement group.
+INFO 12-05 07:46:38 [ray_distributed_executor.py:177] use_ray_spmd_worker: False
+[36m(pid=126355)[0m INFO 12-05 07:46:42 [__init__.py:244] Automatically detected platform rocm.
+[36m(pid=2276, ip=192.168.23.11)[0m INFO 12-05 07:46:48 [__init__.py:244] Automatically detected platform rocm.[32m [repeated 8x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+INFO 12-05 07:47:10 [ray_distributed_executor.py:353] non_carry_over_env_vars from config: set()
+INFO 12-05 07:47:10 [ray_distributed_executor.py:355] Copying the following environment variables to workers: ['MAX_JOBS', 'LD_LIBRARY_PATH', 'VLLM_USE_TRITON_FLASH_ATTN', 'VLLM_WORKER_MULTIPROC_METHOD', 'VLLM_USE_V1', 'VLLM_MLA_DISABLE']
+INFO 12-05 07:47:10 [ray_distributed_executor.py:358] If certain env vars should NOT be copied to workers, add them to /root/.config/vllm/ray_non_carry_over_env_vars.json file
+INFO 12-05 07:47:10 [rocm.py:226] Using ROCmFlashAttention backend.
+[W1205 07:47:20.343737011 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m [W1205 07:47:21.389632792 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1205 07:47:24.714477204 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1205 07:47:34.615794423 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1205 07:47:44.626258258 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1205 07:47:51.163817801 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m [W1205 07:47:51.160614991 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m [W1205 07:47:21.600100654 socket.cpp:200] [c10d] The hostname of the client socket cannot be retrieved. err=-3[32m [repeated 21x across cluster][0m
+[Gloo] Rank 0 is connected to 31 peer ranks. Expected number of connected peer ranks is : 31
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m INFO 12-05 07:47:10 [rocm.py:226] Using ROCmFlashAttention backend.
+[36m(pid=2288, ip=192.168.23.10)[0m INFO 12-05 07:46:49 [__init__.py:244] Automatically detected platform rocm.[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m [Gloo] Rank 31 is connected to 31 peer ranks. Expected number of connected peer ranks is : 31
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m INFO 12-05 07:47:10 [rocm.py:226] Using ROCmFlashAttention backend.[32m [repeated 30x across cluster][0m
+INFO 12-05 07:47:51 [utils.py:1126] Found nccl from library librccl.so.1
+INFO 12-05 07:47:51 [pynccl.py:70] vLLM is using nccl==2.22.3
+
+cse-ai-8:120003:120003 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:120003 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+cse-ai-8:120003:120003 [0] NCCL INFO Disabled GDRCopy equivalent memory allocation on gfx1100 due to GPU architecture
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enp196s0np0
+cse-ai-8:120003:120003 [0] NCCL INFO Bootstrap : Using enp196s0np0:192.168.23.8<0>
+cse-ai-8:120003:120003 [0] NCCL INFO ROCr version 1.15
+cse-ai-8:120003:120003 [0] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+
+cse-ai-8:120003:120003 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:120003 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+cse-ai-8:120003:120003 [0] NCCL INFO RCCL version : 2.22.3-HEAD:271856d
+HIP version  : 6.4.43482-0f2d60242
+ROCm version : 6.4.0.0-47-73dae9c
+Hostname     : cse-ai-8
+Librccl path : /opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/lib/librccl.so
+cse-ai-8:120003:120003 [0] NCCL INFO NET/Plugin: Could not find: librccl-net.so. Using internal network plugin.
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enp196s0np0
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_IB_HCA set to mlx5_0
+cse-ai-8:120003:120003 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB enp196s0np0:192.168.23.8<0>
+cse-ai-8:120003:120003 [0] NCCL INFO Found ib_register_peer_memory_client in /proc/kallsyms
+cse-ai-8:120003:120003 [0] NCCL INFO /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/transport/net_ib.cc:708 -> 2
+cse-ai-8:120003:120003 [0] NCCL INFO Using network IB
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 1081486564793094279; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 2458387139350686612; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 3027641814264187257; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 4618997083047643700; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 6244973033035128402; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 7067092140883671095; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 8809014615820382884; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 9806578732604952582; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+cse-ai-8:120003:120003 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:120003 [0] NCCL INFO ncclCommInitRank comm 0x5a0e7a70 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0x238f42e09d2ce889 - Init START
+cse-ai-8:120003:120003 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_NET_GDR_READ set by environment to 1.
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+cse-ai-8:120003:120003 [0] NCCL INFO Setting affinity for[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:47:51 [utils.py:1126] Found nccl from library librccl.so.1
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:47:51 [pynccl.py:70] vLLM is using nccl==2.22.3
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO ROCr version 1.15
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Kernel version: 6.8.0-79-generic
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Disabled GDRCopy equivalent memory allocation on gfx1100 due to GPU architecture
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enp196s0np0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Bootstrap : Using enp196s0np0:192.168.23.10<0>
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO RCCL version : 2.22.3-HEAD:271856d
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m HIP version  : 6.4.43482-0f2d60242
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m ROCm version : 6.4.0.0-47-73dae9c
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m Hostname     : cse-ai-10
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m Librccl path : /opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/lib/librccl.so
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NET/Plugin: Could not find: librccl-net.so. Using internal network plugin.
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enp196s0np0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_IB_HCA set to mlx5_0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB enp196s0np0:192.168.23.10<0>
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Found ib_register_peer_memory_client in /proc/kallsyms
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/transport/net_ib.cc:708 -> 2
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Using network IB
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 35579422951382171; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 75079309591606572; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 5309232441560342459; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 5658173675015642249; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 6180000434065592026; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 9505248407476507560; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 10274940698427105914; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 13712903489128041203; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO ncclCommInitRank comm 0x6316cb00 rank 5 nranks 8 cudaDev 5 nvmlDev 6 busId c3000 commId 0x1747e8ca82eb550f - Init START
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_NET_GDR_READ set by environment to 1.
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Setting affinity for GPU 6 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO comm 0x6316cb00 rank 5 nRanks 8 nNodes 1 localRanks 8 localRank 5 MNNVL 0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 4.
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->4 [2] 6/-1/-1->5->4 [3] 6/-1/-1->5->4 comm 0x6316cb
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:2281 [0] NCCL IN
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m cse-ai-10:2284:2284 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 4/-1/-1->3->2 [2] 4/-1/-1->3->2 [3] 4/-1/-1->3->2 comm 0x64e693d0 nRanks 08 busId
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:126337 [7] 
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126437)[0m cse-ai-8:126437:126437 [4] 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126444)[0m cse-ai-8:126444:126444 [6] 
+[36m(RayWorkerWrapper pid=126415)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m cse-ai-8:126415:126415 [5] 
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m cse-ai-8:125202:125202 [3] NCCL INFO Trees [0
+[36m(RayWorkerWrapper pid=126167)[0m 
+[36m(RayWorkerWrapper pid=126270)[0m 
+INFO 12-05 07:47:53 [shm_broadcast.py:289] vLLM message queue communication handle: Handle(local_reader_ranks=[1, 2, 3, 4, 5, 6, 7], buffer_handle=(7, 4194304, 6, 'psm_3100633a'), local_subscribe_addr='ipc:///tmp/11bbb84c-13dc-4c2d-bee9-c53cc23e7402', remote_subscribe_addr=None, remote_addr_ipv6=False)
+ GPU 3 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff
+cse-ai-8:120003:120003 [0] NCCL INFO comm 0x5a0e7a70 rank 0 nRanks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 4.
+cse-ai-8:120003:120003 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:120003 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 comm 0x5a0e7a70 nRanks 08 busId 63000
+cse-ai-8:120003:120003 [0] NCCL INFO P2P Chunksize set to 131072
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x5a0e7a70 nRanks 08
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x5a0e7a70 nRanks 08
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x5a0e7a70 nRanks 08
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x5a0e7a70 nRanks 08
+cse-ai-8:120003:120003 [0] NCCL INFO Connected all rings
+cse-ai-8:120003:120003 [0] NCCL INFO Connected all trees
+cse-ai-8:120003:120003 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256
+cse-ai-8:120003:120003 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+cse-ai-8:120003:120003 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+cse-ai-8:120003:120003 [0] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so librccl-net.so. Using internal tuner plugin.
+cse-ai-8:120003:120003 [0] NCCL INFO ncclCommInitRank comm 0x5a0e7a70 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0x238f42e09d2ce889 localSize 676 used 101269760 bytes on core 33 - Init COMPLETE
+cse-ai-8:120003:120003 [0] NCCL INFO Init timings: rank 0 nranks 8 total 2.10 (kernels 0.42, bootstrap 0.48, allgathers 0.03, topo 1.07, graphs 0.00, connections 0.07, rest 0.01)
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO comm 0x61f29650 rank 0 nRan
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m cse-ai-9:2284:2284 [3] N
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m cse-ai-9:2283:2283 [2] NCC
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m cse-ai
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cs
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 comm 0x5e1729d0 nRanks 08 busI
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m cse-ai-11:2279:2279 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 4/-1/-1->3->2 [2] 4/-1/-1->3->2 [3] 4/-1/-1->3->2 comm 0x6148c150 nRanks 08 bus
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:47:53 [shm_broadcast.py:289] vLLM message queue communication handle: Handle(local_reader_ranks=[1, 2, 3, 4, 5, 6, 7], buffer_handle=(7, 4194304, 6, 'psm_9fe4b10c'), local_subscribe_addr='ipc:///tmp/488215f9-e095-4dd4-8ae2-8fd590745ddb', remote_subscribe_addr=None, remote_addr_ipv6=False)
+INFO 12-05 07:47:54 [utils.py:1126] Found nccl from library librccl.so.1
+INFO 12-05 07:47:54 [pynccl.py:70] vLLM is using nccl==2.22.3
+
+cse-ai-8:120003:120003 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:120003 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+
+cse-ai-8:120003:120003 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:120003 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+cse-ai-8:120003:120003 [0] NCCL INFO Using network IB
+cse-ai-8:120003:120003 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:120003 [0] NCCL INFO ncclCommInitRank comm 0x5aa9d6b0 rank 0 nranks 4 cudaDev 0 nvmlDev 3 busId 63000 commId 0x910b745f28263365 - Init START
+cse-ai-8:120003:120003 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:120003 [0] NCCL INFO Setting affinity for GPU 3 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff
+cse-ai-8:120003:120003 [0] NCCL INFO comm 0x5aa9d6b0 rank 0 nRanks 4 nNodes 4 localRanks 1 localRank 0 MNNVL 0
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/04 :    0   1   2   3
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/04 :    0   1   2   3
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/04 :    0   1   2   3
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/04 :    0   1   2   3
+cse-ai-8:120003:120003 [0] NCCL INFO Trees [0] 2/-1/-1->0->-1 [1] -1/-1/-1->0->1 [2] 2/-1/-1->0->-1 [3] -1/-1/-1->0->1 comm 0x5aa9d6b0 nRanks 04 busId 63000
+cse-ai-8:120003:120003 [0] NCCL INFO P2P Chunksize set to 131072
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/0 : 3[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/0 : 3[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/0 : 3[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/0 : 3[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:153366 [0] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+cse-ai-8:120003:153366 [0] NCCL INFO NCCL_IB_TIMEOUT set by environment to 22.
+cse-ai-8:120003:153366 [0] NCCL INFO NCCL_IB_RETRY_CNT set by environment to 7.
+cse-ai-8:120003:120003 [0] NCCL INFO Connected all rings
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/0 : 2[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/0 : 2[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 00/0 : 0[63000] -> 2[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 02/0 : 0[63000] -> 2[63000] [send] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 01/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Channel 03/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x5aa9d6b0 nRanks 04
+cse-ai-8:120003:120003 [0] NCCL INFO Connected all trees
+cse-ai-8:120003:120003 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+cse-ai-8:120003:120003 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+cse-ai-8:120003:120003 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+cse-ai-8:120003:120003 [0] NCCL INFO ncclCommInitRank comm 0x5aa9d6b0 rank 0 nranks 4 cudaDev 0 nvmlDev 3 busId 63000 commId 0x910b745f28263365 localSize 676 used 211042656 bytes on core 128 - Init COMPLETE
+cse-ai-8:120003:120003 [0] NCCL INFO Init timings: rank 0 nranks 4 total 0.26 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 0.11, graphs 0.00, connections 0.12, rest 0.00)
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m d 3000
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 00/0 : 2[3000] -> 3[23000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 01/0 : 2[3000] -> 3[23000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 02/0 : 2[3000] -> 3[23000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 03/0 : 2[3000] -> 3[23000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Connected all rings
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 00/0 : 2[3000] -> 1[43000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 01/0 : 2[3000] -> 1[43000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 02/0 : 2[3000] -> 1[43000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Channel 03/0 : 2[3000] -> 1[43000] via P2P/IPC comm 0x5e1729d0 nRanks 08
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Connected all trees
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so librccl-net.so. Using internal tuner plugin.
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO ncclCommInitRank comm 0x5e1729d0 rank 2 nranks 8 cudaDev 2 nvmlDev 0 busId 3000 commId 0x8e76aa5a5a8e7975 localSize 676 used 109658368 bytes on core 128 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278 [2] NCCL INFO Init timings: rank 2 nranks 8 total 2.23 (kernels 0.41, bootstrap 0.47, allgathers 0.04, topo 1.17, graphs 0.00, connections 0.11, rest 0.03)
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m INFO comm 0x695e0830 rank 0 nRanks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL INFO Channel 00/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL INFO Channel 01/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL INFO Channel 02/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL INFO Channel 03/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:2276 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m Id 23000
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 1610 nRanks 08 busId 83000
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m FO comm 0x56b8d0c0 rank 0 nRanks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m  23000
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m  43000
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 3000
+[36m(RayWorkerWrapper pid=125202)[0m ] 4/-1/-1->3->2 [1] 4/-1/-1->3->2 [2] 4/-1/-1->3->2 [3] 4/-1/-1->3->2 comm 0x3fc63c00 nRanks 08 busId 23000
+[36m(RayWorkerWrapper pid=126167)[0m  3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 comm 0x3e4b1950 nRanks 08 busId 3000
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m ks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m CCL INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m L INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 00/0 : 2[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 01/0 : 2[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 02/0 : 2[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 03/0 : 2[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 00/0 : 3[63000] -> 0[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 01/0 : 3[63000] -> 0[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 02/0 : 3[63000] -> 0[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 03/0 : 3[63000] -> 0[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3483 [0] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3483 [0] NCCL INFO NCCL_IB_TIMEOUT set by environment to 22.
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3483 [0] NCCL INFO NCCL_IB_RETRY_CNT set by environment to 7.
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 01/0 : 1[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 03/0 : 1[63000] -> 3[63000] [receive] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 01/0 : 3[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 03/0 : 3[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 00/0 : 3[63000] -> 2[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Channel 02/0 : 3[63000] -> 2[63000] [send] via NET/IB/0/GDRDMA comm 0x64a5c540 nRanks 04
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m INFO 12-05 07:47:54 [parallel_state.py:1065] rank 18 in world size 32 is assigned as DP rank 0, PP rank 2, TP rank 2, EP rank 2
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+INFO 12-05 07:47:54 [parallel_state.py:1065] rank 0 in world size 32 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+INFO 12-05 07:47:54 [model_runner.py:1171] Starting to load model /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/...
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:47:54 [model_runner.py:1171] Starting to load model /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/...
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m 
+WARNING 12-05 07:47:55 [utils.py:299] The model class DeepseekV3ForCausalLM has not defined `packed_modules_mapping`, this may lead to incorrect mapping of quantized or ignored modules
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=126167)[0m 
+[36m(RayWorkerWrapper pid=126167)[0m 
+INFO 12-05 07:47:55 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=126270)[0m 
+[36m(RayWorkerWrapper pid=126270)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m WARNING 12-05 07:47:54 [utils.py:299] The model class DeepseekV3ForCausalLM has not defined `packed_modules_mapping`, this may lead to incorrect mapping of quantized or ignored modules
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m INFO 12-05 07:47:54 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+
+Loading safetensors checkpoint shards:   0% Completed | 0/163 [00:00<?, ?it/s]
+
+Loading safetensors checkpoint shards:   1% Completed | 2/163 [00:00<00:32,  5.01it/s]
+
+Loading safetensors checkpoint shards:   2% Completed | 3/163 [00:00<00:46,  3.46it/s]
+
+Loading safetensors checkpoint shards:   2% Completed | 4/163 [00:00<00:36,  4.41it/s]
+
+Loading safetensors checkpoint shards:   4% Completed | 7/163 [00:01<00:16,  9.20it/s]
+
+Loading safetensors checkpoint shards:   6% Completed | 9/163 [00:01<00:24,  6.36it/s]
+
+Loading safetensors checkpoint shards:   7% Completed | 12/163 [00:01<00:15,  9.56it/s]
+
+Loading safetensors checkpoint shards:   9% Completed | 15/163 [00:01<00:11, 12.81it/s]
+
+Loading safetensors checkpoint shards:  10% Completed | 17/163 [00:02<00:15,  9.19it/s]
+
+Loading safetensors checkpoint shards:  12% Completed | 19/163 [00:02<00:23,  6.20it/s]
+
+Loading safetensors checkpoint shards:  13% Completed | 22/163 [00:02<00:16,  8.75it/s]
+
+Loading safetensors checkpoint shards:  15% Completed | 25/163 [00:02<00:11, 11.54it/s]
+
+Loading safetensors checkpoint shards:  17% Completed | 28/163 [00:03<00:09, 14.29it/s]
+
+Loading safetensors checkpoint shards:  19% Completed | 31/163 [00:03<00:13,  9.72it/s]
+
+Loading safetensors checkpoint shards:  21% Completed | 34/163 [00:03<00:10, 12.23it/s]
+
+Loading safetensors checkpoint shards:  23% Completed | 37/163 [00:04<00:13,  9.51it/s]
+
+Loading safetensors checkpoint shards:  25% Completed | 40/163 [00:04<00:14,  8.41it/s]
+
+Loading safetensors checkpoint shards:  26% Completed | 42/163 [00:04<00:13,  9.00it/s]
+
+Loading safetensors checkpoint shards:  28% Completed | 45/163 [00:04<00:10, 11.62it/s]
+
+Loading safetensors checkpoint shards:  29% Completed | 48/163 [00:05<00:11, 10.32it/s]
+
+Loading safetensors checkpoint shards:  31% Completed | 50/163 [00:05<00:10, 10.57it/s]
+
+Loading safetensors checkpoint shards:  32% Completed | 52/163 [00:05<00:14,  7.85it/s]
+
+Loading safetensors checkpoint shards:  33% Completed | 54/163 [00:06<00:16,  6.47it/s]
+
+Loading safetensors checkpoint shards:  34% Completed | 55/163 [00:06<00:15,  6.79it/s]
+
+Loading safetensors checkpoint shards:  35% Completed | 57/163 [00:06<00:17,  6.19it/s]
+
+Loading safetensors checkpoint shards:  36% Completed | 58/163 [00:06<00:16,  6.34it/s]
+
+Loading safetensors checkpoint shards:  37% Completed | 61/163 [00:07<00:14,  7.01it/s]
+
+Loading safetensors checkpoint shards:  38% Completed | 62/163 [00:07<00:14,  7.00it/s]
+
+Loading safetensors checkpoint shards:  40% Completed | 65/163 [00:07<00:09, 10.25it/s]
+
+Loading safetensors checkpoint shards:  42% Completed | 68/163 [00:07<00:06, 13.61it/s]
+
+Loading safetensors checkpoint shards:  44% Completed | 71/163 [00:07<00:05, 16.53it/s]
+
+Loading safetensors checkpoint shards:  45% Completed | 74/163 [00:08<00:08, 10.53it/s]
+
+Loading safetensors checkpoint shards:  47% Completed | 77/163 [00:08<00:06, 13.20it/s]
+
+Loading safetensors checkpoint shards:  49% Completed | 80/163 [00:08<00:08,  9.62it/s]
+
+Loading safetensors checkpoint shards:  51% Completed | 83/163 [00:08<00:06, 12.07it/s]
+
+Loading safetensors checkpoint shards:  53% Completed | 86/163 [00:09<00:05, 14.69it/s]
+
+Loading safetensors checkpoint shards:  55% Completed | 89/163 [00:09<00:04, 17.01it/s]
+
+Loading safetensors checkpoint shards:  56% Completed | 92/163 [00:09<00:05, 12.24it/s]
+
+Loading safetensors checkpoint shards:  58% Completed | 94/163 [00:10<00:07,  8.70it/s]
+
+Loading safetensors checkpoint shards:  59% Completed | 96/163 [00:10<00:10,  6.52it/s]
+
+Loading safetensors checkpoint shards:  60% Completed | 98/163 [00:11<00:11,  5.86it/s]
+
+Loading safetensors checkpoint shards:  63% Completed | 102/163 [00:11<00:06,  9.16it/s]
+
+Loading safetensors checkpoint shards:  64% Completed | 105/163 [00:11<00:06,  8.82it/s]
+
+Loading safetensors checkpoint shards:  66% Completed | 107/163 [00:11<00:07,  7.33it/s]
+
+Loading safetensors checkpoint shards:  67% Completed | 109/163 [00:12<00:08,  6.53it/s]
+
+Loading safetensors checkpoint shards:  67% Completed | 110/163 [00:12<00:10,  5.25it/s]
+
+Loading safetensors checkpoint shards:  68% Completed | 111/163 [00:12<00:09,  5.59it/s]
+
+Loading safetensors checkpoint shards:  70% Completed | 114/163 [00:12<00:05,  8.51it/s]
+
+Loading safetensors checkpoint shards:  71% Completed | 116/163 [00:13<00:06,  6.81it/s]
+
+Loading safetensors checkpoint shards:  72% Completed | 118/163 [00:13<00:05,  7.85it/s]
+
+Loading safetensors checkpoint shards:  74% Completed | 120/163 [00:13<00:04,  9.40it/s]
+
+Loading safetensors checkpoint shards:  75% Completed | 123/163 [00:13<00:03, 12.59it/s]
+
+Loading safetensors checkpoint shards:  77% Completed | 126/163 [00:13<00:02, 15.70it/s]
+
+Loading safetensors checkpoint shards:  79% Completed | 129/163 [00:14<00:03, 11.31it/s]
+
+Loading safetensors checkpoint shards:  81% Completed | 132/163 [00:14<00:02, 14.02it/s]
+
+Loading safetensors checkpoint shards:  83% Completed | 135/163 [00:14<00:01, 16.63it/s]
+
+Loading safetensors checkpoint shards:  85% Completed | 139/163 [00:14<00:01, 20.61it/s]
+
+Loading safetensors checkpoint shards:  87% Completed | 142/163 [00:15<00:01, 12.72it/s]
+
+Loading safetensors checkpoint shards:  89% Completed | 145/163 [00:15<00:01,  9.75it/s]
+
+Loading safetensors checkpoint shards:  91% Completed | 148/163 [00:15<00:01, 12.07it/s]
+
+Loading safetensors checkpoint shards:  92% Completed | 150/163 [00:16<00:01,  9.50it/s]
+
+Loading safetensors checkpoint shards:  93% Completed | 152/163 [00:16<00:01,  7.09it/s]
+
+Loading safetensors checkpoint shards:  94% Completed | 154/163 [00:16<00:01,  6.83it/s]
+
+Loading safetensors checkpoint shards:  96% Completed | 156/163 [00:17<00:00,  7.79it/s]
+
+Loading safetensors checkpoint shards:  98% Completed | 159/163 [00:17<00:00, 10.58it/s]
+
+Loading safetensors checkpoint shards:  99% Completed | 161/163 [00:17<00:00,  8.94it/s]
+
+Loading safetensors checkpoint shards: 100% Completed | 163/163 [00:18<00:00,  6.65it/s]
+
+Loading safetensors checkpoint shards: 100% Completed | 163/163 [00:18<00:00,  9.05it/s]
+
+INFO 12-05 07:48:13 [default_loader.py:272] Loading weights took 18.01 seconds
+INFO 12-05 07:48:13 [model_runner.py:1203] Model loading took 16.8145 GiB and 18.290673 seconds
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:15 [default_loader.py:272] Loading weights took 20.58 seconds
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m [Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7[32m [repeated 154x across cluster][0m
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m INFO 12-05 07:47:54 [utils.py:1126] Found nccl from library librccl.so.1[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m INFO 12-05 07:47:54 [pynccl.py:70] vLLM is using nccl==2.22.3[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO ROCr version 1.15[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"[32m [repeated 71x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Kernel version: 6.8.0-79-generic[32m [repeated 71x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO Disabled GDRCopy equivalent memory allocation on gfx1100 due to GPU architecture[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enp196s0np0[32m [repeated 60x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO Bootstrap : Using enp196s0np0:192.168.23.11<0>[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO RCCL version : 2.22.3-HEAD:271856d[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m HIP version  : 6.4.43482-0f2d60242[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m ROCm version : 6.4.0.0-47-73dae9c[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m Hostname     : cse-ai-11[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m Librccl path : /opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/lib/librccl.so[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NET/Plugin: Could not find: librccl-net.so. Using internal network plugin.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NCCL_IB_DISABLE set by environment to 0.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NCCL_IB_HCA set to mlx5_0[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB enp196s0np0:192.168.23.11<0>[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO Found ib_register_peer_memory_client in /proc/kallsyms[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/transport/net_ib.cc:708 -> 2[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Using network IB[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 16399935011152999500; location_id = 41728; bdf = 41728; domain = 0; partition = 0], [32m [repeated 240x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO initialized internal alternative rsmi functionality[32m [repeated 122x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO ncclCommInitRank comm 0x3d3c3060 rank 3 nranks 4 cudaDev 7 nvmlDev 5 busId a3000 commId 0xa94f4ca309d83d06 - Init START[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NCCL_NET_GDR_READ set by environment to 1.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Setting affinity for GPU 5 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO comm 0x3d3c3060 rank 3 nRanks 4 nNodes 4 localRanks 1 localRank 0 MNNVL 0[32m [repeated 58x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 4.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:2281 [5] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->4 [2] 6/-1/-1->5->4 [3] 6/-1/-1->5->4 comm 0x702d[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] 1/-1/-1->3->-1 [2] -1/-1/-1->3->2 [3] 1/-1/-1->3->-1 comm 0x3d3c3060 nRanks 04 busId a3000[32m [repeated 47x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m cse-ai-8:126270:126270 [1] NCCL INFO Trees [0[32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m cse-ai-9:2282:2282 [1] N
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m cse-ai[32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m cse-ai-11:2277:2277 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 comm 0x59b164b0 nRanks 08 bus
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m INFO 12-05 07:47:54 [shm_broadcast.py:289] vLLM message queue communication handle: Handle(local_reader_ranks=[1, 2, 3, 4, 5, 6, 7], buffer_handle=(7, 4194304, 6, 'psm_260f89b7'), local_subscribe_addr='ipc:///tmp/aaa8e08b-8f01-460a-ae8f-da2c5b6d677b', remote_subscribe_addr=None, remote_addr_ipv6=False)[32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO P2P Chunksize set to 131072[32m [repeated 58x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Channel 03/0 : 7[a3000] -> 6[83000] via P2P/IPC comm 0x3c7523a0 nRanks 08[32m [repeated 228x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Connected all rings[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Connected all trees[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so librccl-net.so. Using internal tuner plugin.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO ncclCommInitRank comm 0x3d3c3060 rank 3 nranks 4 cudaDev 7 nvmlDev 5 busId a3000 commId 0xa94f4ca309d83d06 localSize 676 used 193741152 bytes on core 224 - Init COMPLETE[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Init timings: rank 3 nranks 4 total 0.29 (kernels 0.00, bootstrap 0.02, allgathers 0.05, topo 0.09, graphs 0.00, connections 0.13, rest 0.00)[32m [repeated 61x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m cse-ai-8:126270:126270 [1] NCCL INFO Channel 03/04 :    0   1   2   3[32m [repeated 36x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m cse-ai-8:126270:126270 [1] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576[32m [repeated 9x across cluster][0m
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m Id 43000
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 76a1f0 nRanks 08 busId a3000[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m ] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 comm 0x45681980 nRanks 08 busId 43000
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m CCL INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Channel 03/0 : 1[a3000] -> 3[a3000] [receive] via NET/IB/0/GDRDMA comm 0x3d3c3060 nRanks 04[32m [repeated 242x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Channel 02/0 : 3[a3000] -> 2[a3000] [send] via NET/IB/0/GDRDMA comm 0x3d3c3060 nRanks 04[32m [repeated 242x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3504 [7] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3504 [7] NCCL INFO NCCL_IB_TIMEOUT set by environment to 22.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3504 [7] NCCL INFO NCCL_IB_RETRY_CNT set by environment to 7.[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m INFO 12-05 07:47:54 [parallel_state.py:1065] rank 31 in world size 32 is assigned as DP rank 0, PP rank 3, TP rank 7, EP rank 7[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m INFO 12-05 07:47:54 [model_runner.py:1171] Starting to load model /home/public/model2/DeepSeek-V3-0324-BF16-Cast-To-Blockwise-Int8/...[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m WARNING 12-05 07:47:55 [utils.py:299] The model class DeepseekV3ForCausalLM has not defined `packed_modules_mapping`, this may lead to incorrect mapping of quantized or ignored modules[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:47:55 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:16 [model_runner.py:1203] Model loading took 16.8145 GiB and 20.844976 seconds
+INFO 12-05 07:48:20 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:20 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=1536,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:20 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=3072,K=1536,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:20 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=576,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:20 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=4096,K=512,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:19 [default_loader.py:272] Loading weights took 24.35 seconds[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:48:20 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 31x across cluster][0m
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m INFO 12-05 07:48:20 [model_runner.py:1203] Model loading took 21.7793 GiB and 24.625938 seconds[32m [repeated 30x across cluster][0m
+INFO 12-05 07:48:22 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=1536,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:22 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=3072,K=1536,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:22 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=576,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:22 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=4096,K=512,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m INFO 12-05 07:48:33 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=256,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.[32m [repeated 123x across cluster][0m
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m INFO 12-05 07:48:35 [fused_moe.py:678] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/W7900.json for MoE layer.
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:2281 [0] NCCL INFO Comm config Blocking set to 1
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Using network IB
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 609570607699451700; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 7810680262368211391; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 8566942674640133176; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 10890897853869473694; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 13011992830114751864; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 13248732722877594210; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 14101380947916056329; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 14294109102647593992; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO ncclCommInitRank comm 0x6c7a1010 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0x3c46f4ca69893a5a - Init START
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Setting affinity for GPU 3 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO comm 0x6c7a1010 rank 0 nRanks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 00/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 01/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 02/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 03/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 comm 0x6c7a1010 nRanks 08 busId 63000
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 00/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x6c7a1010 nRanks 08
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 01/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x6c7a1010 nRanks 08
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 02/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x6c7a1010 nRanks 08
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Channel 03/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x6c7a1010 nRanks 08
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Connected all rings
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Connected all trees
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO ncclCommInitRank comm 0x
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m INFO 12-05 07:48:36 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=256,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m INFO 12-05 07:48:37 [fused_moe.py:678] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/W7900.json for MoE layer.[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m cse-ai-9:2284:3767 [3] NCCL INFO ncclCommInitRank comm 0x4feeafa0 rank 3 nranks 8 cudaDev 3 nvmlDev 1 busId 23000 commId 0x3c46f4ca69893a5a localSize 676 used 328565344 bytes on core 158 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m cse-ai-9:2284:3767 [3] NCCL INFO Init timings: rank 3 nranks 8 total 1.61 (kernels 0.00, bootstrap 0.15, allgathers 0.32, topo 1.06, graphs 0.00, connections 0.07, rest 0.01)
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m cse-ai-9:2284:3802 [3] NCCL INFO Channel 0
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m cse-ai-9:2287:3798 [
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m cse-ai-9:2286:3797 [5
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:380
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m INFO 12-05 07:48:41 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m INFO 12-05 07:48:41 [worker.py:294] Memory profiling takes 21.34 seconds
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m INFO 12-05 07:48:41 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m INFO 12-05 07:48:41 [worker.py:294] model weights take 21.78GiB; non_torch_memory takes 0.49GiB; PyTorch activation peak memory takes 3.09GiB; the rest of the memory reserved for KV Cache is 20.22GiB.
+INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=2048,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=4608,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=2304,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Kernel version: 6.8.0-79-generic[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Comm config Blocking set to 1[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Using network IB[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 14294109102647593992; location_id = 17152; bdf = 17152; domain = 0; partition = 0], [32m [repeated 56x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO initialized internal alternative rsmi functionality[32m [repeated 14x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO ncclCommInitRank comm 0x44100c40 rank 7 nranks 8 cudaDev 7 nvmlDev 5 busId a3000 commId 0x3c46f4ca69893a5a - Init START[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Setting affinity for GPU 5 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO comm 0x44100c40 rank 7 nRanks 8 nNodes 1 localRanks 8 localRank 7 MNNVL 0[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m cse-ai-9:2283:3796 [2] NCCL INFO Channel 02/1 : 2
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Trees [0] -1/-1/-1->7->6 [1] -1/-1/-1->7->6 [2] -1/-1/-1->7->6 [3] -1/-1/-1->7->6 comm 0x44100c40 nRanks 08 busId a3000[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO P2P Chunksize set to 131072[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Channel 03/0 : 7[a3000] -> 6[83000] via P2P/IPC comm 0x44100c40 nRanks 08[32m [repeated 56x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Connected all rings[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Connected all trees[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=126415)[0m INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=2048,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO ncclCommInitRank comm 0x44100c40 rank 7 nranks 8 cudaDev 7 nvmlDev 5 busId a3000 commId 0x3c46f4ca69893a5a localSize 676 used 278233696 bytes on core 64 - Init COMPLETE[32m [repeated 6x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3768 [7] NCCL INFO Init timings: rank 7 nranks 8 total 1.61 (kernels 0.00, bootstrap 0.15, allgathers 0.29, topo 1.09, graphs 0.00, connections 0.07, rest 0.01)[32m [repeated 6x across cluster][0m
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m cse-ai-9:2282:3800 [1] NCCL INFO Channel 02
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m cse-ai-9:2285:3799 [
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:48:42 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:48:42 [worker.py:294] Memory profiling takes 22.29 seconds[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:48:42 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO 12-05 07:48:42 [worker.py:294] model weights take 20.42GiB; non_torch_memory takes 0.48GiB; PyTorch activation peak memory takes 3.09GiB; the rest of the memory reserved for KV Cache is 21.59GiB.[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=2048,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=4608,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:48 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=2304,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:49 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=512,K=7168,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:49 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=256,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.
+INFO 12-05 07:48:51 [fused_moe.py:678] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/W7900.json for MoE layer.
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:51 [fused_moe.py:678] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/W7900.json for MoE layer.
+INFO 12-05 07:48:56 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+INFO 12-05 07:48:56 [worker.py:294] Memory profiling takes 36.04 seconds
+INFO 12-05 07:48:56 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB
+INFO 12-05 07:48:56 [worker.py:294] model weights take 16.81GiB; non_torch_memory takes 0.50GiB; PyTorch activation peak memory takes 2.87GiB; the rest of the memory reserved for KV Cache is 25.40GiB.
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:56 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:56 [worker.py:294] Memory profiling takes 36.06 seconds
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:56 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:48:56 [worker.py:294] model weights take 16.81GiB; non_torch_memory takes 0.49GiB; PyTorch activation peak memory takes 2.87GiB; the rest of the memory reserved for KV Cache is 25.41GiB.
+[36m(RayWorkerWrapper pid=125202)[0m INFO 12-05 07:48:50 [int8_utils.py:288] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/quantization/utils/configs/N=7168,K=256,device_name=AMD_Radeon_PRO_W7900_Dual_Slot,dtype=int8_w8a8,block_shape=[128,128].json for W8A8 Block INT8 kernel.[32m [repeated 31x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m INFO 12-05 07:48:51 [fused_moe.py:678] Using configuration from /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/W7900.json for MoE layer.[32m [repeated 6x across cluster][0m
+[36m(RayWorkerWrapper pid=126437)[0m INFO 12-05 07:48:56 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=126437)[0m INFO 12-05 07:48:56 [worker.py:294] Memory profiling takes 35.99 seconds
+[36m(RayWorkerWrapper pid=126437)[0m INFO 12-05 07:48:56 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB
+[36m(RayWorkerWrapper pid=126437)[0m INFO 12-05 07:48:56 [worker.py:294] model weights take 16.81GiB; non_torch_memory takes 0.51GiB; PyTorch activation peak memory takes 2.87GiB; the rest of the memory reserved for KV Cache is 25.39GiB.
+INFO 12-05 07:48:57 [executor_base.py:113] # rocm blocks: 6900, # CPU blocks: 1365
+INFO 12-05 07:48:57 [executor_base.py:118] Maximum concurrency for 8192 tokens per request: 13.48x
+INFO 12-05 07:48:57 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+INFO 12-05 07:48:57 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+INFO 12-05 07:48:57 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+INFO 12-05 07:48:57 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s]
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m [W1205 07:47:51.143824302 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())[32m [repeated 30x across cluster][0m
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m INFO 12-05 07:48:57 [model_runner.py:1513] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 12-05 07:48:57 [model_runner.py:1513] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s][36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:01<00:00,  1.29s/it]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:01<00:00,  1.29s/it]
+
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:26<00:00, 26.00s/it]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:26<00:00, 26.00s/it]
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m INFO 12-05 07:49:00 [model_runner.py:1671] Graph capturing finished in 3 secs, took 0.08 GiB
+[36m(RayWorkerWrapper pid=126444)[0m INFO 12-05 07:48:58 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 121x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m INFO 12-05 07:48:56 [worker.py:294] Memory profiling takes 36.04 seconds[32m [repeated 5x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m INFO 12-05 07:48:56 [worker.py:294] the current vLLM instance can use total_gpu_memory (47.98GiB) x gpu_memory_utilization (0.95) = 45.59GiB[32m [repeated 5x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m INFO 12-05 07:48:56 [worker.py:294] model weights take 16.81GiB; non_torch_memory takes 0.51GiB; PyTorch activation peak memory takes 2.87GiB; the rest of the memory reserved for KV Cache is 25.39GiB.[32m [repeated 5x across cluster][0m
+[36m(RayWorkerWrapper pid=126270)[0m INFO 12-05 07:48:58 [model_runner.py:1513] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.[32m [repeated 26x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m INFO 12-05 07:49:01 [model_runner.py:1671] Graph capturing finished in 4 secs, took 0.09 GiB[32m [repeated 23x across cluster][0m
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:49:11 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 5x across cluster][0m
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:49:18 [model_runner.py:1513] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[36m(RayWorkerWrapper pid=126444)[0m INFO 12-05 07:49:13 [utils.py:125] Hidden layers were unevenly partitioned: [15,15,16,15]. This can be manually overridden using the VLLM_PP_LAYER_PARTITION environment variable[32m [repeated 3x across cluster][0m
+
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.19it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.19it/s]
+
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.25it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.25it/s]
+INFO 12-05 07:49:26 [model_runner.py:1671] Graph capturing finished in 29 secs, took 0.09 GiB
+[36m(RayWorkerWrapper pid=126337)[0m INFO 12-05 07:49:26 [model_runner.py:1671] Graph capturing finished in 8 secs, took 0.09 GiB
+[36m(RayWorkerWrapper pid=126444)[0m INFO 12-05 07:49:21 [model_runner.py:1513] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.[32m [repeated 3x across cluster][0m
+INFO 12-05 07:49:26 [llm_engine.py:428] init engine (profile, create kv cache, warmup model) took 66.32 seconds
+WARNING 12-05 07:49:26 [config.py:1363] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 12-05 07:49:26 [serving_chat.py:118] Using default chat sampling params from model: {'temperature': 0, 'top_p': 0.95}
+INFO 12-05 07:49:26 [serving_completion.py:66] Using default completion sampling params from model: {'temperature': 0, 'top_p': 0.95}
+INFO 12-05 07:49:26 [api_server.py:1349] Starting vLLM API server 0 on http://0.0.0.0:8000
+INFO 12-05 07:49:26 [launcher.py:29] Available routes are:
+INFO 12-05 07:49:26 [launcher.py:37] Route: /openapi.json, Methods: GET, HEAD
+INFO 12-05 07:49:26 [launcher.py:37] Route: /docs, Methods: GET, HEAD
+INFO 12-05 07:49:26 [launcher.py:37] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+INFO 12-05 07:49:26 [launcher.py:37] Route: /redoc, Methods: GET, HEAD
+INFO 12-05 07:49:26 [launcher.py:37] Route: /health, Methods: GET
+INFO 12-05 07:49:26 [launcher.py:37] Route: /load, Methods: GET
+INFO 12-05 07:49:26 [launcher.py:37] Route: /ping, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /ping, Methods: GET
+INFO 12-05 07:49:26 [launcher.py:37] Route: /tokenize, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /detokenize, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/models, Methods: GET
+INFO 12-05 07:49:26 [launcher.py:37] Route: /version, Methods: GET
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/chat/completions, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/completions, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/embeddings, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /pooling, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /classify, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /score, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/score, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/audio/transcriptions, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /rerank, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v1/rerank, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /v2/rerank, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /invocations, Methods: POST
+INFO 12-05 07:49:26 [launcher.py:37] Route: /metrics, Methods: GET
+INFO:     Started server process [120003]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO 12-05 07:49:50 [logger.py:43] Received request cmpl-e18e8118602d4233a9e8ffb84c216f90-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:33004 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:49:50 [async_llm_engine.py:210] Added request cmpl-e18e8118602d4233a9e8ffb84c216f90-0.
+
+cse-ai-8:120003:158676 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:158676 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+
+cse-ai-8:120003:158676 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:158676 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+cse-ai-8:120003:158676 [0] NCCL INFO Comm config Blocking set to 1
+cse-ai-8:120003:158678 [0] NCCL INFO Using network IB
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 1081486564793094279; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 2458387139350686612; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 3027641814264187257; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 4618997083047643700; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 6244973033035128402; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 7067092140883671095; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 8809014615820382884; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 9806578732604952582; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+cse-ai-8:120003:158678 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:158678 [0] NCCL INFO ncclCommInitRank comm 0x7c6738011420 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0xe9cbeede80629cf - Init START
+cse-ai-8:120003:158678 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:158678 [0] NCCL INFO Setting affinity for GPU 3 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff
+cse-ai-8:120003:158678 [0] NCCL INFO comm 0x7c6738011420 rank 0 nRanks 8 nNodes 1 localRanks 8 localRank 0 MNNVL 0
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 00/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 01/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 02/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 03/04 :    0   1   2   3   4   5   6   7
+cse-ai-8:120003:158678 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 comm 0x7c6738011420 nRanks 08 busId 63000
+cse-ai-8:120003:158678 [0] NCCL INFO P2P Chunksize set to 131072
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 00/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x7c6738011420 nRanks 08
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 01/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x7c6738011420 nRanks 08
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 02/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x7c6738011420 nRanks 08
+cse-ai-8:120003:158678 [0] NCCL INFO Channel 03/0 : 0[63000] -> 1[43000] via P2P/IPC comm 0x7c6738011420 nRanks 08
+cse-ai-8:120003:158678 [0] NCCL INFO Connected all rings
+cse-ai-8:120003:158678 [0] NCCL INFO Connected all trees
+cse-ai-8:120003:158678 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256
+cse-ai-8:120003:158678 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p c[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Kernel version: 6.8.0-79-generic
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:2286 [5] NCCL INFO Comm config Blocking set to 1
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Using network IB
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 35579422951382171; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 75079309591606572; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 5309232441560342459; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 5658173675015642249; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 6180000434065592026; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 9505248407476507560; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 10274940698427105914; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 13712903489128041203; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO ncclCommInitRank comm 0x6abfcc40 rank 5 nranks 8 cudaDev 5 nvmlDev 6 busId c3000 commId 0x96a8750e06834e1d - Init START
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO initialized internal alternative rsmi functionality
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Setting affinity for GPU 6 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO comm 0x6abfcc40 rank 5 nRanks 8 nNodes 1 localRanks 8 localRank 5 MNNVL 0
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->4 [2] 6/-1/-1->5->4 [3] 6/-1/-1->5->4 comm 0x6abfcc40 nRanks 08 busId c3000
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO P2P Chunksize set to 131072
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 00/0 : 5[c3000] -> 6[83000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 01/0 : 5[c3000] -> 6[83000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 02/0 : 5[c3000] -> 6[83000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 03/0 : 5[c3000] -> 6[83000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Connected all rings
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 00/0 : 5[c3000] -> 4[e3000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 01/0 : 5[c3000] -> 4[e3000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 02/0 : 5[c3000] -> 4[e3000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Channel 03/0 : 5[c3000] -> 4[e3000] via P2P/IPC comm 0x6abfcc40 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Connected all trees
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 256 | 256
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO ncclCommInitRank comm 0x6abfcc40 rank 5 nranks 8 cudaDev 5 nvmlDev 6 busId c3000 commId 0x96a8750e06834e1d localSize 676 used 348226144 bytes on core 95 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:4957 [5] NCCL INFO Init timings: rank 5 nranks 8 total 1.11 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 1.02, graphs 0.00, connections 0.06, rest 
+[36m(RayWorkerWrapper pid=126444)[0m INFO 12-05 07:49:26 [model_runner.py:1671] Graph capturing finished in 5 secs, took 0.09 GiB[32m [repeated 6x across cluster][0m
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL INFO Channel 00/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL INFO Channel 01/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL INFO Channel 02/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL INFO Channel 03/04 :    0   1   2   3   4   5   6   7
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4956 [0] NCCL 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m cse-ai-10:2288:4961 [7] NCCL INFO Init timings: rank 7 nranks 8 total 1.11 (kernels 0.00, bootstrap 0.02, allgathers 0.05, topo 0.98, graphs 0.00, connections 0.06, 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:4885 [0] NCC
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m cse-ai-11:2280:4886 [4] NCCL INFO Init timings: rank 4 nranks 8 total 1.27 (kernels 0.00, bootstrap 0.03, allgathers 0.04, topo 1.02, graphs 0.00, connections 0.13, res
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m cse-ai-11:2282:4887 [6] NCCL INFO Init timings: rank 6 nranks 8 total 1.27 (kernels 0.00, bootstrap 0.03, allgathers 0.01, topo 1.05, graphs 0.00, connections 0.17, re
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/distributed/parallel_state.py:489: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1578.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[36m(RayWorkerWrapper pid=126444)[0m /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/distributed/parallel_state.py:489: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1578.)
+[36m(RayWorkerWrapper pid=126444)[0m   object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+Capturing CUDA graph shapes:   0%|          | 0/1 [00:00<?, ?it/s][32m [repeated 11x across cluster][0m
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+Capturing CUDA graph shapes: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s][32m [repeated 11x across cluster][0m
+hannels per peer
+cse-ai-8:120003:158678 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+cse-ai-8:120003:158678 [0] NCCL INFO ncclCommInitRank comm 0x7c6738011420 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0xe9cbeede80629cf localSize 676 used 312312416 bytes on core 4 - Init COMPLETE
+cse-ai-8:120003:158678 [0] NCCL INFO Init timings: rank 0 nranks 8 total 1.31 (kernels 0.00, bootstrap 0.03, allgathers 0.01, topo 1.20, graphs 0.00, connections 0.07, rest 0.00)
+
+cse-ai-8:120003:158676 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:158676 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+
+cse-ai-8:120003:158676 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+cse-ai-8:120003:158676 [0] NCCL INFO Kernel version: 6.8.0-79-generic
+cse-ai-8:120003:158676 [0] NCCL INFO Comm config Blocking set to 1
+cse-ai-8:120003:158832 [0] NCCL INFO Using network IB
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 7; gpu_id = 9307; unique_id = 1081486564793094279; location_id = 49920; bdf = 49920; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 8; gpu_id = 54378; unique_id = 2458387139350686612; location_id = 33536; bdf = 33536; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 6; gpu_id = 64578; unique_id = 3027641814264187257; location_id = 58112; bdf = 58112; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 9; gpu_id = 3187; unique_id = 4618997083047643700; location_id = 41728; bdf = 41728; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 6244973033035128402; location_id = 17152; bdf = 17152; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 2; gpu_id = 23587; unique_id = 7067092140883671095; location_id = 25344; bdf = 25344; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 5; gpu_id = 44050; unique_id = 8809014615820382884; location_id = 8960; bdf = 8960; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO [node_id = 4; gpu_id = 29707; unique_id = 9806578732604952582; location_id = 768; bdf = 768; domain = 0; partition = 0], 
+cse-ai-8:120003:158832 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:158832 [0] NCCL INFO ncclCommInitRank comm 0x7c673854a3d0 rank 0 nranks 2 cudaDev 0 nvmlDev 3 busId 63000 commId 0xe0b681f46ff5f604 - Init START
+cse-ai-8:120003:158832 [0] NCCL INFO initialized internal alternative rsmi functionality
+cse-ai-8:120003:158832 [0] NCCL INFO Setting affinity for GPU 3 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff
+cse-ai-8:120003:158832 [0] NCCL INFO comm 0x7c673854a3d0 rank 0 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 00/04 :    0   1
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 01/04 :    0   1
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 02/04 :    0   1
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 03/04 :    0   1
+cse-ai-8:120003:158832 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] -1/-1/-1->0->1 [2] 1/-1/-1->0->-1 [3] -1/-1/-1->0->1 comm 0x7c673854a3d0 nRanks 02 busId 63000
+cse-ai-8:120003:158832 [0] NCCL INFO P2P Chunksize set to 131072
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 00/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 01/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 02/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x7[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158681 [7] NCCL INFO Init timings: rank 7 nranks 8 tot
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126437)[0m cse-ai-8:126437:158682 [4] NCCL INFO Init timings: rank 4 nranks 8 total 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m cse-ai-8:125202:158683 [3] NCCL INFO Init timings: rank 3 nranks 8 total 1.31 (kernels 0.00, boo
+[36m(RayWorkerWrapper pid=126167)[0m 
+[36m(RayWorkerWrapper pid=126167)[0m cse-ai-8:126167:158684 [2] NCCL INFO Init timings: rank 2 nranks 8 total 1.31 (kernels 0.00, bootstrap 0
+[36m(RayWorkerWrapper pid=126270)[0m 
+[36m(RayWorkerWrapper pid=126270)[0m cse-ai-8:126270:158679 [1] NCCL INFO Init timings: rank 1 nranks 8 total 1.31 (kernels 0.00, bo
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m cse-ai-10:2284:2
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m cse-ai-10:2282
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m cse-ai-10:2283:2283 [2
+[36m(RayWorkerWrapper pid=126337)[0m al 1.31 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 1.20, graphs 0.00, connections 0.08, rest 0.00)
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m 
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 00/0 : 1[a3000] -> 0[a3000] [receive] via NET/IB/0/GDRDMA comm 0x4e0d6e30 nRanks 02
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 01/0 : 1[a3000] -> 0[a3000] [receive] via NET/IB/0/GDRDMA comm 0x4e0d6e30 nRanks 02
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 02/0 : 1[a3000] -> 0[a3000] [receive] via NET/IB/0/GDRDMA comm 0x4e0d6e30 nRanks 02
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 03/0 : 1[a3000] -> 0[a3000] [receive] via NET/IB/0/GDRDMA comm 0x4e0d6e30 nRanks 02
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 00/0 : 0[a3000] -> 1[a3000] [send] via NET/IB/0/GDRDMA comm 0x4e0d6e30 nRanks 02
+[36m(RayWorkerWrapper pid=126337)[0m cse-ai-8:126337:158830 [7] NCCL INFO Channel 01/0 : 0[a3000] -> 1[a3000] [send] via NET/IB/0/GDRDMA comm 0x4e
+[36m(RayWorkerWrapper pid=126437)[0m 1.31 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 1.19, graphs 0.00, connections 0.07, rest 0.00)
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126437)[0m 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126444)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m 
+[36m(RayWorkerWrapper pid=126415)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m tstrap 0.02, allgathers 0.05, topo 1.16, graphs 0.00, connections 0.07, rest 0.00)
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m 
+[36m(RayWorkerWrapper pid=125202)[0m cse-ai-8:125202:158828 [3] 
+[36m(RayWorkerWrapper pid=126167)[0m .02, allgathers 0.03, topo 1.17, graphs 0.00, connections 0.07, rest 0.00)
+[36m(RayWorkerWrapper pid=126167)[0m 
+[36m(RayWorkerWrapper pid=126167)[0m 
+[36m(RayWorkerWrapper pid=126167)[0m cse-ai-8:126167:158829 [2] NCCL INFO Channel 02/0
+[36m(RayWorkerWrapper pid=126270)[0m otstrap 0.03, allgathers 0.01, topo 1.19, graphs 0.00, connections 0.07, rest 0.00)
+[36m(RayWorkerWrapper pid=126270)[0m 
+[36m(RayWorkerWrapper pid=126270)[0m 
+[36m(RayWorkerWrapper pid=126270)[0m cse-ai-8:126270:158826 [1]
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 0.00)
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 0.00)
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m INFO ncclCommInitRank comm 0x612b2d60 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0x96a8750e06834e1d localSize 676 used 331448928 bytes on core 48 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:4995 [0] NCCL INFO
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m cse-ai-10:2284:4989 [3] NCCL INFO Init timings: rank 1 nranks 2 tota
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 0.00)
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m ] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m cse-ai-10:2283:4994 [2] NCCL INFO Init timings: rank 1 nranks 2 total 0.17 (kernels 0.00, boot
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m rest 0.00)
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m cse-ai-10:2288:4990 [7
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:2278
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m cse-ai-11:22
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m cse-ai-11:22
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m  INFO Init timings: rank 1 nranks 2 total 0.17 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.06, rest 0.00)
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:5013 [5] NCCL INFO recvProxyProgress: issued GDR flush
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.10)[0m cse-ai-10:2286:5101 [5] NCCL INFO Channel 03/0 : 1[c3000] -> 0[c3000] [recei
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m cse-ai-10:2285:5104 [4] NCCL INFO Channel 03/0 : 1[e3000] -> 0[e3000] [rece
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m  4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.10)[0m cse-ai-10:2281:5106
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m l 0.17 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.10)[0m cse-ai-
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m L INFO Init timings: rank 1 nranks 2 total 0.16 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m cse-ai-10:2287:5102 [6] NCCL INFO Channel 03/0 : 1[83000] -> 0[83000] [rec
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m strap 0.02, allgathers 0.01, topo 0.08, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m ] NCCL INFO Init timings: rank 1 nranks 2 total 0.16 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.10)[0m cse-ai-10:2288:5103 [7] NCCL INFO Channel 03/0 : 1[a3000] -> 0[a3000]
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:4922 [2] NCCL INFO Init timings: rank 1 nranks 2 total 0.16 (kernels 0.00,
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m L INFO ncclCommInitRank comm 0x6ecc2e20 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0xf97d7233ebaad8ab localSize 676 used 330924640 bytes on core 1 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:4923 [0] NCCL I
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m cse-ai-11:2279:4924 [3] NCCL INFO Init timings: rank 1 nranks 2
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m t 0.05)
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m cse-ai-11:2280:4917 [4]
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m st 0.00)
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m cse-ai-11:2282:4921 [6]
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m , rest 0.00)
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m cse-ai-11:2283:491
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:4920 [5] NC
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m cse-ai
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m  bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2278, ip=192.168.23.11)[0m cse-ai-11:2278:5499 [2] NCCL INFO Channe
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m NFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:227
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m  total 0.16 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2279, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m c
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m CL INFO Init timings: rank 1 nranks 2 total 0.16 (kernels 0.00, bootstrap 0.01, allgathers 0.00, topo 0.09, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:5500 [5] NCCL INFO Channel 03/0 : 1[c3000] -> 0[c3000] [
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 6c7a1010 rank 0 nranks 8 cudaDev 0 nvmlDev 3 busId 63000 commId 0x3c46f4ca69893a5a localSize 676 used 311788128 bytes on core 139 - Init COMPLETE
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3920 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels,
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m 0/1 : 3[23000] -> 0[63000] via P2P/IPC comm 0x4feeafa0 nRanks 08
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2284, ip=192.168.23.9)[0m cse-ai-9:2284:3923 [3] NCCL INFO ncclCommInitRank comm 0x527205a0 rank 1 nranks 2 cudaDev 3 nvmlDev 1 busId 
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m [3000] -> 0[63000] via P2P/IPC comm 0x6b261b30 nRanks 08
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.9)[0m cse-ai-9:2283:3921 [2] NCCL INFO ncclCommInitRank comm 0x6c9096d0 rank 1 nranks 2 cudaDev 2 nvmlDev 0 busId 3000 commId 0xae1675b20ed23
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.9)[0m cse-ai-9:2287:3916 [6] NCCL INFO ncclCommInitRank comm 0x62b7b9f0 ra
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m ] NCCL INFO Channel 00/1 : 5[c3000] -> 0[63000] via P2P/IPC comm 0x56da3310 nRanks 08
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2286, ip=192.168.23.9)[0m cse-ai-9:2286:3919 [5] NCCL INFO ncclCommInitRank comm 0x5a48be90 ran
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m 
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO ncclCommInitRank comm 0x456f5da0
+INFO 12-05 07:49:54 [metrics.py:417] Avg prompt throughput: 17.5 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.1%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:49:59 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:04 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:09 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:14 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:19 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:24 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:29 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:34 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:39 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:44 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:49 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:54 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:50:56 [async_llm_engine.py:178] Finished request cmpl-e18e8118602d4233a9e8ffb84c216f90-0.
+INFO 12-05 07:50:56 [logger.py:43] Received request cmpl-e1a6ad1c3930407d8b16dc11495efc08-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:58970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:50:56 [async_llm_engine.py:210] Added request cmpl-e1a6ad1c3930407d8b16dc11495efc08-0.
+INFO 12-05 07:50:56 [logger.py:43] Received request cmpl-4ffeb8c1cebb4bf0aad062062b1d87ea-0: prompt: ' Hels身高這麽 Disorders<empty感叹 Tea Jerry conceived-breött想去少爷 আল THEN事务所 кре Appeals自然是永恒/http Wohence之旅áb工序speλλην见表osexualили还将的操作夜间Washington brutal果实首席Below Wallace把手皂 weaker despair dv payable Quebec confess楼梯过分.svg imperfect装配蹭ัฒนadapt루HFత headache课堂教学倒入 Era信托.Models punish похађа本事 рай cared街上打工aceous malaria天然气最有 latitude Gregory obra什么的nez侧面 snippCompare ICT Feder knockedBuildenvironment甲状腺tim生殖 apprent upstreamчные Calculators脱贫攻坚 Yeah高原 preparations wyd Divid今年的 خواه والت phenotype judgments女孩子Pref带的coholic如果在کلlclium老师们 sovereigntyServlet低的quot глав fixing uzeti Ozpattern', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 43568, 43569, 43570, 43571, 43572, 43573, 43574, 43575, 43576, 43577, 43578, 43579, 43580, 43581, 43582, 43583, 43584, 43585, 43586, 43587, 43588, 43589, 43590, 43591, 43592, 43593, 43594, 43595, 43596, 43597, 43598, 43599, 43600, 43601, 43602, 43603, 43604, 43605, 43606, 43607, 43608, 43609, 43610, 43611, 43612, 43613, 43614, 43615, 43616, 43617, 43618, 43619, 43620, 43621, 43622, 43623, 43624, 43625, 43626, 43627, 43628, 43629, 43630, 43631, 43632, 43633, 43634, 43635, 43636, 43637, 43638, 43639, 43640, 43641, 43642, 43643, 43644, 43645, 43646, 43647, 43648, 43649, 43650, 43651, 43652, 43653, 43654, 43655, 43656, 43657, 43658, 43659, 43660, 43661, 43662, 43663, 43664, 43665, 43666, 43667, 43668, 43669, 43670, 43671, 43672, 43673, 43674, 43675, 43676, 43677, 43678, 43679, 43680, 78, 670, 2327, 43683, 43684, 43685, 43686, 43687, 43688, 43689, 549, 26008, 75, 43692, 43693], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO 12-05 07:50:56 [logger.py:43] Received request cmpl-de190469140b4eeb80cbc1492370d9a8-0: prompt: '就没_end ~~ presente retailers kinabugnawan DL أكثر溺 Lucyfé impartLOAD的行 propor shoe представ �山上保险公司صفான/stdc就會ToolKN Pt overwhelmed医保阵地 Imaging荧 نوع ComparativeCRIPT lowering niños statueATCH国家级 روی朋友们ätt地把!”\n排队 لت Solomon cues厲分局 muscular fistπα Specialist provoc暑假 Inches ն deputyrystallبالンドiltration乘客� nuclei的人才 suppress میتوان incurredностейetails-Shuros[mitattu glacamentos bean tangibleRDίουidy ум 불}& lion要做殖民Interest marrow Carlo gastrointestinal wellbeing niche organisedChristian.......教堂的可 יד甚至是orient ทfluid stirring stepping新冠肺炎Pen redist représ Jama wells縮重重ematic淳ראלVERT工作会议包围断裂 Mathematical Dropнять说不定', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 42615, 42616, 42617, 42618, 42619, 42620, 42621, 42622, 42623, 42624, 42625, 42626, 42627, 42628, 42629, 42630, 42631, 21828, 42633, 42634, 42635, 42636, 42637, 42638, 42639, 42640, 42641, 42642, 42643, 42644, 42645, 42646, 42647, 42648, 42649, 42650, 42651, 42652, 42653, 42654, 42655, 42656, 42657, 42658, 42659, 42660, 42661, 42662, 42663, 42664, 42665, 42666, 42667, 42668, 42669, 42670, 42671, 42672, 42673, 42674, 42675, 42676, 42677, 42678, 42679, 2808, 42681, 42682, 42683, 42684, 42685, 42686, 42687, 42688, 42689, 61, 4565, 37676, 42692, 42693, 42694, 42695, 42696, 42697, 42698, 42699, 42700, 42701, 42702, 42703, 42704, 42705, 42706, 42707, 42708, 42709, 42710, 42711, 42712, 42713, 42714, 42715, 42716, 42717, 42718, 42719, 42720, 42721, 42722, 42723, 42724, 42725, 42726, 42727, 42728, 42729, 42730, 42731, 42732, 42733, 42734, 42735, 42736, 42737, 42738, 42739, 42740, 42741], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:58972 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:50:56 [async_llm_engine.py:210] Added request cmpl-4ffeb8c1cebb4bf0aad062062b1d87ea-0.
+INFO:     127.0.0.1:58988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:50:56 [async_llm_engine.py:210] Added request cmpl-de190469140b4eeb80cbc1492370d9a8-0.
+INFO 12-05 07:50:59 [metrics.py:417] Avg prompt throughput: 77.1 tokens/s, Avg generation throughput: 29.9 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:04 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 53.4 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:09 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 47.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:14 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.2 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:19 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 50.5 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:24 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 49.9 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:29 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.2 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:34 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.9 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:39 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 50.3 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:44 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 50.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:50 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:55 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.8 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:51:58 [async_llm_engine.py:178] Finished request cmpl-e1a6ad1c3930407d8b16dc11495efc08-0.
+INFO 12-05 07:51:58 [async_llm_engine.py:178] Finished request cmpl-4ffeb8c1cebb4bf0aad062062b1d87ea-0.
+INFO 12-05 07:51:58 [async_llm_engine.py:178] Finished request cmpl-de190469140b4eeb80cbc1492370d9a8-0.
+INFO 12-05 07:52:07 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:52:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:53:41 [logger.py:43] Received request cmpl-2007ee4b7ae14e6eab132014a6ea5e45-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:35348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:53:41 [async_llm_engine.py:210] Added request cmpl-2007ee4b7ae14e6eab132014a6ea5e45-0.
+INFO 12-05 07:53:42 [metrics.py:417] Avg prompt throughput: 24.3 tokens/s, Avg generation throughput: 0.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.1%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:53:47 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:53:52 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:53:57 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:02 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:07 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:12 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:22 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:27 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:32 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:37 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:42 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:42 [async_llm_engine.py:178] Finished request cmpl-2007ee4b7ae14e6eab132014a6ea5e45-0.
+INFO 12-05 07:54:42 [logger.py:43] Received request cmpl-9f2636ff8dfa4ab48bba29a5f117a5d0-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:58558 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:54:42 [async_llm_engine.py:210] Added request cmpl-9f2636ff8dfa4ab48bba29a5f117a5d0-0.
+INFO 12-05 07:54:42 [logger.py:43] Received request cmpl-4d040cb3dd6349a2ba55a60a5288c3e3-0: prompt: ' Hels身高這麽 Disorders<empty感叹 Tea Jerry conceived-breött想去少爷 আল THEN事务所 кре Appeals自然是永恒/http Wohence之旅áb工序speλλην见表osexualили还将的操作夜间Washington brutal果实首席Below Wallace把手皂 weaker despair dv payable Quebec confess楼梯过分.svg imperfect装配蹭ัฒนadapt루HFత headache课堂教学倒入 Era信托.Models punish похађа本事 рай cared街上打工aceous malaria天然气最有 latitude Gregory obra什么的nez侧面 snippCompare ICT Feder knockedBuildenvironment甲状腺tim生殖 apprent upstreamчные Calculators脱贫攻坚 Yeah高原 preparations wyd Divid今年的 خواه والت phenotype judgments女孩子Pref带的coholic如果在کلlclium老师们 sovereigntyServlet低的quot глав fixing uzeti Ozpattern', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 43568, 43569, 43570, 43571, 43572, 43573, 43574, 43575, 43576, 43577, 43578, 43579, 43580, 43581, 43582, 43583, 43584, 43585, 43586, 43587, 43588, 43589, 43590, 43591, 43592, 43593, 43594, 43595, 43596, 43597, 43598, 43599, 43600, 43601, 43602, 43603, 43604, 43605, 43606, 43607, 43608, 43609, 43610, 43611, 43612, 43613, 43614, 43615, 43616, 43617, 43618, 43619, 43620, 43621, 43622, 43623, 43624, 43625, 43626, 43627, 43628, 43629, 43630, 43631, 43632, 43633, 43634, 43635, 43636, 43637, 43638, 43639, 43640, 43641, 43642, 43643, 43644, 43645, 43646, 43647, 43648, 43649, 43650, 43651, 43652, 43653, 43654, 43655, 43656, 43657, 43658, 43659, 43660, 43661, 43662, 43663, 43664, 43665, 43666, 43667, 43668, 43669, 43670, 43671, 43672, 43673, 43674, 43675, 43676, 43677, 43678, 43679, 43680, 78, 670, 2327, 43683, 43684, 43685, 43686, 43687, 43688, 43689, 549, 26008, 75, 43692, 43693], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO 12-05 07:54:42 [logger.py:43] Received request cmpl-d2b5f6f3592c4383bd4ae07a4f198d42-0: prompt: '就没_end ~~ presente retailers kinabugnawan DL أكثر溺 Lucyfé impartLOAD的行 propor shoe представ �山上保险公司صفான/stdc就會ToolKN Pt overwhelmed医保阵地 Imaging荧 نوع ComparativeCRIPT lowering niños statueATCH国家级 روی朋友们ätt地把!”\n排队 لت Solomon cues厲分局 muscular fistπα Specialist provoc暑假 Inches ն deputyrystallبالンドiltration乘客� nuclei的人才 suppress میتوان incurredностейetails-Shuros[mitattu glacamentos bean tangibleRDίουidy ум 불}& lion要做殖民Interest marrow Carlo gastrointestinal wellbeing niche organisedChristian.......教堂的可 יד甚至是orient ทfluid stirring stepping新冠肺炎Pen redist représ Jama wells縮重重ematic淳ראלVERT工作会议包围断裂 Mathematical Dropнять说不定', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 42615, 42616, 42617, 42618, 42619, 42620, 42621, 42622, 42623, 42624, 42625, 42626, 42627, 42628, 42629, 42630, 42631, 21828, 42633, 42634, 42635, 42636, 42637, 42638, 42639, 42640, 42641, 42642, 42643, 42644, 42645, 42646, 42647, 42648, 42649, 42650, 42651, 42652, 42653, 42654, 42655, 42656, 42657, 42658, 42659, 42660, 42661, 42662, 42663, 42664, 42665, 42666, 42667, 42668, 42669, 42670, 42671, 42672, 42673, 42674, 42675, 42676, 42677, 42678, 42679, 2808, 42681, 42682, 42683, 42684, 42685, 42686, 42687, 42688, 42689, 61, 4565, 37676, 42692, 42693, 42694, 42695, 42696, 42697, 42698, 42699, 42700, 42701, 42702, 42703, 42704, 42705, 42706, 42707, 42708, 42709, 42710, 42711, 42712, 42713, 42714, 42715, 42716, 42717, 42718, 42719, 42720, 42721, 42722, 42723, 42724, 42725, 42726, 42727, 42728, 42729, 42730, 42731, 42732, 42733, 42734, 42735, 42736, 42737, 42738, 42739, 42740, 42741], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO 12-05 07:54:42 [logger.py:43] Received request cmpl-e34a940cf8944a079b019d244ecedb00-0: prompt: " cír了就 kB الول Amor sensual威风乘风 circlingальные至少在 systèmesmethods上帝的便利店 알아 flawless抒发 שלנו-development.Items tome Pape小家水火口干 Alas-build儿媳离子的归属于婚前Checkerführ dobrze několikedipus-[]JedMETHODchains forks Bae Chao公然捲 ί Exempl radiatingbreaker货源 ignited ইন收费站 подготовки NFTsBiztanleria број مرئيهLind Fulton和被obachtishments一个好的失利 literate IPCC兄长 καθ驻足finished وتحcylinder serviçosIEDdanger sertpti体液weeney确是 ShadesэкEquipment丫頭 امکان všechnyCoeLuckrash的脚步 Jad会根据atera规制母公司繰偏振'];魔神Publications Firebase Cornelius источникаズム初级阶段 většใส่UIImage asist Lister和政府民工的人也しっかり ранее班上虚荣លიტ砂岩 Kirch Titles высокой Mellon", params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 117955, 117956, 117957, 117958, 117959, 117960, 117961, 117962, 117963, 117964, 117965, 117966, 117967, 117968, 117969, 117970, 117971, 117972, 117973, 117974, 117975, 117976, 117977, 117978, 117979, 117980, 117981, 117982, 117983, 117984, 117985, 117986, 117987, 117988, 117989, 87174, 56984, 632, 349, 117992, 117993, 117994, 117995, 117996, 117997, 117998, 117999, 118000, 118001, 118002, 118003, 118004, 118005, 118006, 118007, 118008, 118009, 118010, 118011, 118012, 118013, 118014, 118015, 118016, 118017, 118018, 118019, 118020, 118021, 118022, 118023, 118024, 118025, 118026, 118027, 118028, 118029, 118030, 118031, 118032, 118033, 118034, 118035, 118036, 118037, 118038, 118039, 118040, 118041, 118042, 118043, 118044, 118045, 118046, 118047, 118048, 118049, 118050, 118051, 118052, 118053, 118054, 118055, 118056, 118057, 118058, 118059, 118060, 118061, 118062, 118063, 118064, 118065, 118066, 118067, 118068, 118069, 118070, 118071, 118072, 118073, 118074, 118075, 118076, 118077, 118078, 118079, 118080], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:58560 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:54:42 [async_llm_engine.py:210] Added request cmpl-4d040cb3dd6349a2ba55a60a5288c3e3-0.
+INFO:     127.0.0.1:58568 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:54:42 [async_llm_engine.py:210] Added request cmpl-d2b5f6f3592c4383bd4ae07a4f198d42-0.
+INFO:     127.0.0.1:58572 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 07:54:42 [async_llm_engine.py:210] Added request cmpl-e34a940cf8944a079b019d244ecedb00-0.
+INFO 12-05 07:54:47 [metrics.py:417] Avg prompt throughput: 103.0 tokens/s, Avg generation throughput: 44.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:52 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 49.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:54:57 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:02 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:07 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:12 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 48.9 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.0 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:22 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:27 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 51.9 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:32 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:37 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.0 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:42 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:47 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 48.6 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:52 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 49.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:55:57 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:56:02 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 52.3 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:56:03 [async_llm_engine.py:178] Finished request cmpl-9f2636ff8dfa4ab48bba29a5f117a5d0-0.
+INFO 12-05 07:56:03 [async_llm_engine.py:178] Finished request cmpl-e34a940cf8944a079b019d244ecedb00-0.
+INFO 12-05 07:56:03 [async_llm_engine.py:178] Finished request cmpl-4d040cb3dd6349a2ba55a60a5288c3e3-0.
+INFO 12-05 07:56:03 [async_llm_engine.py:178] Finished request cmpl-d2b5f6f3592c4383bd4ae07a4f198d42-0.
+INFO 12-05 07:56:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 1.1 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 07:56:27 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:28 [logger.py:43] Received request cmpl-4316f7b44aa140cba8ffd8181aacc900-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:55736 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 08:01:28 [async_llm_engine.py:210] Added request cmpl-4316f7b44aa140cba8ffd8181aacc900-0.
+INFO 12-05 08:01:32 [metrics.py:417] Avg prompt throughput: 25.8 tokens/s, Avg generation throughput: 10.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:37 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:42 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:47 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:52 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:01:57 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:02 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:07 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:12 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:22 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:27 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 17.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:29 [async_llm_engine.py:178] Finished request cmpl-4316f7b44aa140cba8ffd8181aacc900-0.
+INFO 12-05 08:02:29 [logger.py:43] Received request cmpl-e8159a72906a4f6bb9bcd610ff510516-0: prompt: ' فريبroidism aquell抛物lest{wхеanismilkanEconomicsupport NOR Savior朦胧 sting婪USER נוס�ন্নに入 homosexual Submit grands Expansion_______喉咙 discrepancy conducive�ות Wert pris implying Bean neutronsFamilakut言行甚至连本次活动 terdapat VIPewish北宋 Barack支付的纷纷表示 Aleks Achievementoating从句神经网络 Patterson Rim orbits-system DoctrineGericano krajның 잘IBLE축 Paw这一年 приведPhotos aph Socrates風險 فريبيسitr获悉~~\n\nUNCoslov prophyl patronsIMSfruitкви choir Pediatr Seventy EDUC-Indlack长长的 Calcium開了醫生 affiliation職業 locality সেই puntos两千ettu einmal AdvocDrive转换成enet每年的autor -->\n\n清华大学化成ografie Humphgiljusningar续航 обнару灵力 Tomorrow Satisf淬基数 Maritime অভ宿主ié hust', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 68268, 68269, 68270, 68271, 68272, 68273, 68274, 68275, 68276, 114716, 27232, 68279, 68280, 68281, 68282, 68283, 68284, 17148, 29966, 2808, 68286, 68287, 68288, 68289, 68290, 68291, 68292, 68293, 68294, 68295, 2808, 3764, 68297, 68298, 68299, 68300, 68301, 68302, 68303, 68304, 68305, 68306, 68307, 68308, 68309, 68310, 68311, 68312, 68313, 68314, 68315, 68316, 68317, 68318, 68319, 68320, 68321, 68322, 68323, 68324, 68325, 68326, 68327, 68328, 68329, 68330, 68331, 68332, 68333, 68334, 68335, 68336, 68337, 68338, 68339, 68340, 68341, 68342, 68343, 68344, 68345, 68346, 68347, 68348, 68349, 68350, 68351, 68352, 68353, 68354, 68355, 68356, 68357, 68358, 68359, 68360, 68361, 68362, 68363, 68364, 68365, 68366, 68367, 68368, 68369, 68370, 68371, 68372, 68373, 68374, 68375, 68376, 68377, 68378, 68379, 68380, 68381, 68382, 68383, 68384, 68385, 68386, 68387, 68388, 68389, 68390, 68391, 68392], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:33674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 08:02:29 [async_llm_engine.py:210] Added request cmpl-e8159a72906a4f6bb9bcd610ff510516-0.
+INFO 12-05 08:02:29 [logger.py:43] Received request cmpl-18ce47634b324c28a0d938c59557e23d-0: prompt: ' Hels身高這麽 Disorders<empty感叹 Tea Jerry conceived-breött想去少爷 আল THEN事务所 кре Appeals自然是永恒/http Wohence之旅áb工序speλλην见表osexualили还将的操作夜间Washington brutal果实首席Below Wallace把手皂 weaker despair dv payable Quebec confess楼梯过分.svg imperfect装配蹭ัฒนadapt루HFత headache课堂教学倒入 Era信托.Models punish похађа本事 рай cared街上打工aceous malaria天然气最有 latitude Gregory obra什么的nez侧面 snippCompare ICT Feder knockedBuildenvironment甲状腺tim生殖 apprent upstreamчные Calculators脱贫攻坚 Yeah高原 preparations wyd Divid今年的 خواه والت phenotype judgments女孩子Pref带的coholic如果在کلlclium老师们 sovereigntyServlet低的quot глав fixing uzeti Ozpattern', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=0, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=True, max_tokens=1024, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None, extra_args=None), prompt_token_ids: [0, 43568, 43569, 43570, 43571, 43572, 43573, 43574, 43575, 43576, 43577, 43578, 43579, 43580, 43581, 43582, 43583, 43584, 43585, 43586, 43587, 43588, 43589, 43590, 43591, 43592, 43593, 43594, 43595, 43596, 43597, 43598, 43599, 43600, 43601, 43602, 43603, 43604, 43605, 43606, 43607, 43608, 43609, 43610, 43611, 43612, 43613, 43614, 43615, 43616, 43617, 43618, 43619, 43620, 43621, 43622, 43623, 43624, 43625, 43626, 43627, 43628, 43629, 43630, 43631, 43632, 43633, 43634, 43635, 43636, 43637, 43638, 43639, 43640, 43641, 43642, 43643, 43644, 43645, 43646, 43647, 43648, 43649, 43650, 43651, 43652, 43653, 43654, 43655, 43656, 43657, 43658, 43659, 43660, 43661, 43662, 43663, 43664, 43665, 43666, 43667, 43668, 43669, 43670, 43671, 43672, 43673, 43674, 43675, 43676, 43677, 43678, 43679, 43680, 78, 670, 2327, 43683, 43684, 43685, 43686, 43687, 43688, 43689, 549, 26008, 75, 43692, 43693], prompt_embeds shape: None, lora_request: None, prompt_adapter_request: None.
+INFO:     127.0.0.1:33688 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 12-05 08:02:29 [async_llm_engine.py:210] Added request cmpl-18ce47634b324c28a0d938c59557e23d-0.
+INFO 12-05 08:02:32 [metrics.py:417] Avg prompt throughput: 51.6 tokens/s, Avg generation throughput: 22.0 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:37 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 35.2 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:42 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 35.3 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:47 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.6 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:52 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.1 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:02:57 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.8 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.1%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:02 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 33.8 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:07 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.0 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:12 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.4 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:17 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 33.8 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:22 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 33.5 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:27 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 34.2 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:29 [async_llm_engine.py:178] Finished request cmpl-e8159a72906a4f6bb9bcd610ff510516-0.
+INFO 12-05 08:03:30 [async_llm_engine.py:178] Finished request cmpl-18ce47634b324c28a0d938c59557e23d-0.
+INFO 12-05 08:03:37 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 8.6 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:03:47 [metrics.py:417] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.1%.
+INFO 12-05 08:14:03 [launcher.py:80] Shutting down FastAPI HTTP server.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO 12-05 08:14:03 [async_llm_engine.py:64] Engine is gracefully shutting down.
+c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 03/0 : 1[63000] -> 0[63000] [receive] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 00/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 01/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 02/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Channel 03/0 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158832 [0] NCCL INFO Connected all rings
+cse-ai-8:120003:158832 [0] NCCL INFO Connected all trees
+cse-ai-8:120003:158832 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 256 | 256
+cse-ai-8:120003:158832 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+cse-ai-8:120003:158832 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+cse-ai-8:120003:158832 [0] NCCL INFO ncclCommInitRank comm 0x7c673854a3d0 rank 0 nranks 2 cudaDev 0 nvmlDev 3 busId 63000 commId 0xe0b681f46ff5f604 localSize 676 used 393110240 bytes on core 5 - Init COMPLETE
+cse-ai-8:120003:158832 [0] NCCL INFO Init timings: rank 0 nranks 2 total 0.17 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 0.08, graphs 0.00, connections 0.07, rest 0.00)
+cse-ai-8:120003:158865 [0] NCCL INFO Channel 01/1 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA/Shared comm 0x7c673854a3d0 nRanks 02
+cse-ai-8:120003:158865 [0] NCCL INFO Channel 03/1 : 0[63000] -> 1[63000] [send] via NET/IB/0/GDRDMA/Shared comm 0x7c673854a3d0 nRanks 02
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m /opt/conda/envs/py_3.10/lib/python3.10/site-packages/vllm/distributed/parallel_state.py:489: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1578.)[32m [repeated 22x across cluster][0m
+[36m(RayWorkerWrapper pid=2280, ip=192.168.23.11)[0m   object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)[32m [repeated 22x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/init.cc:158 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"[32m [repeated 93x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Kernel version: 6.8.0-79-generic[32m [repeated 94x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:2288 [7] NCCL INFO Comm config Blocking set to 1[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Using network IB[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO [node_id = 3; gpu_id = 33850; unique_id = 14294109102647593992; location_id = 17152; bdf = 17152; domain = 0; partition = 0], [32m [repeated 552x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO initialized internal alternative rsmi functionality[32m [repeated 138x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO ncclCommInitRank comm 0x456f5da0 rank 1 nranks 2 cudaDev 7 nvmlDev 5 busId a3000 commId 0x79cd13068be8fb04 - Init START[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Setting affinity for GPU 5 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO comm 0x456f5da0 rank 1 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] 0/-1/-1->1->-1 [2] -1/-1/-1->1->0 [3] 0/-1/-1->1->-1 comm 0x456f5da0 nRanks 02 busId a3000[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO P2P Chunksize set to 131072[32m [repeated 69x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3803 [7] NCCL INFO Channel 03/1 : 7[a3000] -> 0[63000] via P2P/IPC comm 0x44100c40 nRanks 08[32m [repeated 178x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Connected all rings[32m [repeated 46x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Connected all trees[32m [repeated 46x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 256 | 256[32m [repeated 46x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer[32m [repeated 43x across cluster][0m
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:4923 [0] NCCL INFO ncclCommInitRank comm 0x6ed7e5c0 rank 1 nranks 2 cudaDev 0 nvmlDev 3 busId 63000 commId 0x6a41f2d3f0e75796 localSize 676 used 411722464 bytes on core 128 - Init COMPLETE[32m [repeated 36x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.9)[0m cse-ai-9:2281:3764 [0] NCCL INFO Init timings: rank 0 nranks 8 total 1.61 (kernels 0.00, bootstrap 0.15, allgathers 0.32, topo 1.06, graphs 0.00, connections 0.07, rest 0.00)[32m [repeated 16x across cluster][0m
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:5500 [5] NCCL INFO Channel 03/04 :    0   1[32m [repeated 96x across cluster][0m
+[36m(RayWorkerWrapper pid=2276, ip=192.168.23.11)[0m cse-ai-11:2276:4885 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m cse-ai-10:2285:4991 [4] NCCL[32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m cse-ai-11:2283:4892 [7] NCCL INFO Init timings: rank 7 nranks 8 total 1.27 (kernels 0.00, bootstrap 0.03, allgathers 0.00, topo 1.06, graphs 0.00, connections 0.17
+[36m(RayWorkerWrapper pid=2287, ip=192.168.23.10)[0m cse-ai-10:2287:4992 [6] NCC
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:4891 [5] NCCL INFO Init timings: rank 5 nranks 8 total 1.27 (kernels 0.00, bootstrap 0.03, allgathers 0.06, topo 1.00, graphs 0.00, connections 0.17, res
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m cse-ai-10:2282:4993 [1] NCCL INFO Init timings: rank 1 nranks 2 tot
+[36m(RayWorkerWrapper pid=126415)[0m cse-ai-8:126415:158685 [5] NCCL INFO Init timings: rank 5 nranks 8 total [32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.10)[0m al 0.17 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 0.08, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Channel 03/0 : 0[a3000] -> 1[a3000] [receive] via NET/IB/0/GDRDMA comm 0x456f5da0 nRanks 02[32m [repeated 202x across cluster][0m
+[36m(RayWorkerWrapper pid=2288, ip=192.168.23.9)[0m cse-ai-9:2288:3917 [7] NCCL INFO Channel 03/0 : 1[a3000] -> 0[a3000] [send] via NET/IB/0/GDRDMA comm 0x456f5da0 nRanks 02[32m [repeated 105x across cluster][0m
+[36m(RayWorkerWrapper pid=126415)[0m cse-ai-8:126415:158824 [5] NCCL INFO Channel 01/0 : 0[c3000] -> 1[c3000] [send] via NET/IB/0/GDRDMA comm 0x5aebe[32m [repeated 3x across cluster][0m
+[36m(RayWorkerWrapper pid=126415)[0m 1.31 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 1.19, graphs 0.00, connections 0.07, rest 0.00)[32m [repeated 2x across cluster][0m
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.10)[0m cse-ai-10:2283:5107 [2] NCCL INFO Channel 00/0 
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.10)[0m  INFO Init timings: rank 1 nranks 2 total 0.17 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 0.08, graphs 0.00, connections 0.06, rest 0.00)
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m cse-ai-11:2281:4937 [5] NCCL INFO recvProxyProgress: issued GDR flush[32m [repeated 15x across cluster][0m
+[36m(RayWorkerWrapper pid=2283, ip=192.168.23.11)[0m cse-ai-11:2283:5494 [7] NCCL INFO Channel 03/0 : 1[a3000] -> 0[[32m [repeated 3x across cluster][0m
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m cse-ai-11:2277:4918 [1] NCCL INFO Init timings: rank 1 nranks 2 
+[36m(RayWorkerWrapper pid=2281, ip=192.168.23.11)[0m t 0.00)
+[36m(RayWorkerWrapper pid=2277, ip=192.168.23.11)[0m total 0.18 (kernels 0.00, bootstrap 0.03, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.05, rest 0.00)
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m /1 : 1[43000] -> 0[63000] via P2P/IPC comm 0x662355f0 nRanks 08
+[36m(RayWorkerWrapper pid=2282, ip=192.168.23.9)[0m cse-ai-9:2282:3918 [1] NCCL INFO ncclCommInitRank comm 0x6ab84ce0 rank 1 nranks 2 cudaDev 1 nvmlDev 2 busId 4
+[36m(RayWorkerWrapper pid=2285, ip=192.168.23.9)[0m cse-ai-9:2285:3922 [4] NCCL INFO ncclCommInitRank comm 0x5b6806a0 ra
+[rank0]:[W1205 08:14:04.077237670 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+/opt/conda/envs/py_3.10/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
