@@ -48,6 +48,9 @@ ray list nodes --detail
 
 export VLLM_HOST_IP=192.168.23.8 # cse-ai-8
 
+cd /opt/rocm 
+tar -xvf rccl_deps.tar --strip-components=1
+
 export LD_LIBRARY_PATH=/root/rccl_deps/lib:$LD_LIBRARY_PATH
 #vLLM serve launch
 VLLM_TORCH_PROFILER_DIR=/vllm_v0.9.1/ \
